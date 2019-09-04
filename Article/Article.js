@@ -85,6 +85,23 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+
+  title: "Space X into the Galazy",
+  date: 'Sept 9th, 2019', 
+  firstParagraph: `Lorem ipsum dolor amet kinfolk squid whatever migas everyday carry vape kitsch. Knausgaard PBR&B humblebrag YOLO, quinoa deep v hashtag blog normcore master cleanse bitters you probably haven't heard of them helvetica austin ennui. Offal swag 90's vape kombucha hashtag sustainable kogi deep v sriracha small batch chambray flannel tbh disrupt. Migas single-origin coffee pabst coloring book art party green juice bitters. Tbh blog actually dreamcatcher forage, banh mi 8-bit.`,
+  secondParagraph: `Umami DIY slow-carb, woke chambray kogi fam tousled salvia chia glossier. Unicorn migas chartreuse locavore irony retro. Jean shorts gochujang typewriter cronut. Prism YOLO mixtape celiac, succulents vaporware cliche trust fund tacos hammock schlitz put a bird on it enamel pin. Church-key schlitz palo santo iceland street art. Try-hard woke prism franzen kinfolk williamsburg four dollar toast. Church-key portland ethical wayfarers.`,
+  thirdParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`
+  },
+  {
+    title: 'Quantum bit internet is here', 
+    date: 'Aug, 14, 2019',
+    firstParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`,
+    secondParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`,
+    thirdParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`
+
+
   }
 ];
 
