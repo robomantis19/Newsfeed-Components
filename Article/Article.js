@@ -85,6 +85,23 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+
+  title: "Space X into the Galazy",
+  date: 'Sept 9th, 2019', 
+  firstParagraph: `Lorem ipsum dolor amet kinfolk squid whatever migas everyday carry vape kitsch. Knausgaard PBR&B humblebrag YOLO, quinoa deep v hashtag blog normcore master cleanse bitters you probably haven't heard of them helvetica austin ennui. Offal swag 90's vape kombucha hashtag sustainable kogi deep v sriracha small batch chambray flannel tbh disrupt. Migas single-origin coffee pabst coloring book art party green juice bitters. Tbh blog actually dreamcatcher forage, banh mi 8-bit.`,
+  secondParagraph: `Umami DIY slow-carb, woke chambray kogi fam tousled salvia chia glossier. Unicorn migas chartreuse locavore irony retro. Jean shorts gochujang typewriter cronut. Prism YOLO mixtape celiac, succulents vaporware cliche trust fund tacos hammock schlitz put a bird on it enamel pin. Church-key schlitz palo santo iceland street art. Try-hard woke prism franzen kinfolk williamsburg four dollar toast. Church-key portland ethical wayfarers.`,
+  thirdParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`
+  },
+  {
+    title: 'Quantum bit internet is here', 
+    date: 'Aug, 14, 2019',
+    firstParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`,
+    secondParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`,
+    thirdParagraph: `Typewriter bespoke selfies, coloring book forage synth godard mustache plaid. Mustache viral hashtag farm-to-table 90's letterpress iPhone single-origin coffee freegan pok pok skateboard biodiesel brooklyn. Disrupt offal polaroid street art pug. Pitchfork everyday carry ramps, art party vaporware vexillologist kinfolk taiyaki lo-fi chia banh mi PBR&B.`
+
+
   }
 ];
 
@@ -99,6 +116,8 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+
+
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -112,3 +131,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+function Art(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const theArticle = document.createElement('div');
+  const theTitle = document.createElement('h2');
+  const theDate  = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const theSpan = document.createElement('span');
+  
+  theArticle.appendChild(theTitle);
+  theArticle.appendChild(theDate);
+  theArticle.appendChild(paragraph1);
+  theArticle.appendChild(paragraph2);
+  theArticle.appendChild(paragraph3);
+  theArticle.appendChild(theSpan);
+
+  theArticle.classList.add('article');
+  theDate.classList.add('date');
+  theSpan.classList.add('expandButton');
+
+  theTitle.textContent = title;
+  theDate.textContent = date;
+  paragraph1.textContent=firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  theSpan.textContent = '\u25BC';
+
+  
+  
+  theSpan.addEventListener('click', (e) =>{
+    console.log('clicked', e.target);
+    theArticle.classList.toggle('article-open');
+  })
+  
+  
+  return theArticle
+
+
+}
+
+const htmlArticles = document.querySelector('.articles');
+data.forEach(item => {
+  htmlArticles.appendChild(Art(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+});
