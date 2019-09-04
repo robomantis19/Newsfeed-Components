@@ -99,6 +99,8 @@ const data = [
     <span class='expandButton'></span>
   </div>
 
+
+
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
@@ -112,3 +114,49 @@ const data = [
   Step 5: Add a new article to the array. Make sure it is in the same format as the others. Refresh the page to see the new article.
 
 */
+
+
+function Art(title, date, firstParagraph, secondParagraph, thirdParagraph){
+  const theArticle = document.createElement('div');
+  const theTitle = document.createElement('h2');
+  const theDate  = document.createElement('p');
+  const paragraph1 = document.createElement('p');
+  const paragraph2 = document.createElement('p');
+  const paragraph3 = document.createElement('p');
+  const theSpan = document.createElement('span');
+  
+  theArticle.appendChild(theTitle);
+  theArticle.appendChild(theDate);
+  theArticle.appendChild(paragraph1);
+  theArticle.appendChild(paragraph2);
+  theArticle.appendChild(paragraph3);
+  theArticle.appendChild(theSpan);
+
+  theArticle.classList.add('article');
+  theDate.classList.add('date');
+  theSpan.classList.add('expandButton');
+
+  theTitle.textContent = title;
+  theDate.textContent = date;
+  paragraph1.textContent=firstParagraph;
+  paragraph2.textContent = secondParagraph;
+  paragraph3.textContent = thirdParagraph;
+  theSpan.textContent = '\u25BC';
+
+  
+  
+  theSpan.addEventListener('click', (e) =>{
+    console.log('clicked', e.target);
+    theArticle.classList.toggle('article-open');
+  })
+  
+  
+  return theArticle
+
+
+}
+
+const htmlArticles = document.querySelector('.articles');
+data.forEach(item => {
+  htmlArticles.appendChild(Art(item.title, item.date, item.firstParagraph, item.secondParagraph, item.thirdParagraph));
+});
