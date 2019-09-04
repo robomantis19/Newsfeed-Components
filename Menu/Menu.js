@@ -61,10 +61,18 @@ function myMenu(menuList){
 myMenu(menuItems)
 
 const menuHTML = document.querySelector('.menu-button')
-const headerHTML = document.querySelector('header');
+// const headerHTML = document.querySelector('header');
+
+const menu = myMenu(menuItems);
 menuHTML.addEventListener('click', e => {
-  menuHTML.classList.toggle('menu--open');
-  return e.target.appendChild(myMenu(menuItems))
+  e.preventDefault();
+  menu.classList.toggle('menu--open');
+  
+
   // appendChild(myMenu(menuItems));
 })
+document.querySelector('.header').append(menu);
+
+
+
 
