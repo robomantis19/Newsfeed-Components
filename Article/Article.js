@@ -85,7 +85,24 @@ const data = [
     thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
           Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
           Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
+  },
+  {
+    title: 'Article 2300',
+    date: 'Jan 1st, 2019',
+    firstParagraph: `Hodor hodor HODOR! Hodor hodor - hodor, hodor. Hodor hodor... Hodor hodor hodor; hodor hodor. Hodor hodor hodor, hodor, hodor
+          hodor. Hodor, hodor. Hodor. Hodor, hodor - hodor... Hodor hodor hodor; hodor HODOR hodor, hodor hodor?! Hodor hodor, hodor.
+          Hodor hodor hodor hodor hodor! Hodor hodor - HODOR hodor, hodor hodor hodor hodor hodor; hodor hodor? `,
+
+    secondParagraph: `Hodor, hodor. Hodor. Hodor, hodor, hodor. Hodor hodor, hodor. Hodor hodor, hodor, hodor hodor. Hodor! Hodor hodor, hodor;
+          hodor hodor hodor? Hodor, hodor. Hodor. Hodor, hodor - HODOR hodor, hodor hodor hodor! Hodor, hodor. Hodor. Hodor, HODOR
+          hodor, hodor hodor, hodor, hodor hodor. Hodor hodor - hodor - hodor... Hodor hodor hodor hodor hodor hodor hodor?! Hodor
+          hodor - hodor hodor hodor. Hodor. Hodor hodor... Hodor hodor hodor hodor hodor? `,
+
+    thirdParagraph: `Hodor hodor - hodor... Hodor hodor hodor hodor. Hodor. Hodor! Hodor hodor, hodor hodor hodor hodor hodor; hodor hodor? Hodor!
+          Hodor hodor, HODOR hodor, hodor hodor?! Hodor! Hodor hodor, HODOR hodor, hodor hodor, hodor, hodor hodor. Hodor, hodor.
+          Hodor. Hodor, hodor, hodor. Hodor hodor... Hodor hodor hodor?! Hodor, hodor... Hodor hodor HODOR hodor, hodor hodor. Hodor.`
   }
+  
 ];
 
 /* Step 1: Create a function that creates a component. You will want your component to look like the template below: 
@@ -98,11 +115,60 @@ const data = [
 
     <span class='expandButton'></span>
   </div>
+*/
+function Article(inputTitle, inputDate, inputPara1, inputPara2, inputPara3){
+  const article = document.createElement('div');
+  const title1 = document.createElement('h2');
+  const date = document.createElement('p');
+  const p1 = document.createElement('p');
+  const p2 = document.createElement('p'); 
+  const p3 = document.createElement('p');
 
+  const expBtn = document.createElement('span');
+
+  article.classList.add('article');
+  date.classList.add('date')
+  expBtn.classList.add('expandButton')
+
+  // date.append(p1,p2,p3);
+
+  title1.textContent = `${inputTitle}`
+  date.textContent = `${inputDate}`
+  p1.textContent = `${inputPara1}`
+  p2.textContent = `${inputPara2}`
+  p3.textContent = `${inputPara3}`
+  const open = '\u25bc';
+  expBtn.textContent = open;
+  let position  = 0; 
+  expBtn.addEventListener('click', event => { 
+    console.log('button clicked', event.target);
+    article.classList.toggle('article-open')
+    
+  })
+  article.appendChild(title1)
+  article.appendChild(date)
+  article.appendChild(p1)
+  article.appendChild(p2)
+  article.appendChild(p3)
+  article.appendChild(expBtn);
+
+  return article
+}
+
+const IndexArticle = document.querySelector('.articles')
+//const first = Article(data[0].title)
+//console.log(first);
+
+data.map((element) => { 
+  console.log(Article(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph));
+
+  IndexArticle.append(Article(element.title, element.date, element.firstParagraph, element.secondParagraph, element.thirdParagraph));
+})
+/*
   Hint: You will need to use createElement more than once here!
 
   Your function should take either an object as it's one argument, or 5 separate arguments mapping to each piece of the data object above.
-
+  
   Step 2: Add an event listener to the expandButton span. This event listener should toggle the class 'article-open' on the 'article' div.
 
   Step 3: return the entire component.
